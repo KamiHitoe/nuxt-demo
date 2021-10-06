@@ -7,3 +7,11 @@
   </main>
 </template>
 
+<script>
+export default {
+  mounted() {
+    console.log(process.env.STRIPE_PK);
+  }
+}
+</script>
+
