@@ -2,7 +2,7 @@
 ## overview
 
 - Nuxt.js = Vue.js(v2) + vue-router + Vuex + SSR(node)
-
+- moduleやpluginをinstallする度にnuxt.config.jsに追記する必要がある
 
 ## tags
 
@@ -32,5 +32,11 @@
 - SSR: Nuxt SSRモードではサーバサイドレンダリングするのでnodeは必須
 - SPA: nodeいらない. 静的ホスティングサービスから一度レンダリングするとあとは<NuxtLink>でブラウザ側で遷移するだけ
 - ライフサイクル: plugin読み込み -> serverInit(Vuex, context) -> middleware -> created() -> fetch() -> mounted()
+
+## .env
+
+1. @nuxtjs/dotenvパッケージをinstall
+2. nuxt.config.jsのbuildModulesに@nuxtjs/dotenvを追加
+3. process.env.VARで参照可能
 
 

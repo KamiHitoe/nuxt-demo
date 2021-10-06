@@ -40,10 +40,12 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/dotenv',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    'nuxt-stripe-module'
   ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -67,5 +69,19 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  // stripe module configuration
+  // See https://github.com/WilliamDASILVA/nuxt-stripe-module#usage
+  stripe: {
+    version: '2020-08-27',  // versionは固定にしておいた方が無難です。
+    publishableKey: process.env.STRIPE_PK,
+    locale: 'ja',
+  },
+
+
 }
+
+
+
+
